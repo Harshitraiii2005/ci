@@ -1,14 +1,14 @@
+# app.py
 import streamlit as st
+from power_calc import calculate_powers
 
-st.title("power calculator")
-st.write("enter a number to calculate its square, cube, and fifth power")
+st.title("Power Calculator")
+st.write("Enter a number to calculate its square, cube, and fifth power")
 
-n=st.number_input("enter an integer", value=1, steps=1)
+n = st.number_input("Enter an integer", value=1, step=1)
 
-square=n**2
-cube=n**3
-fifth_power=n**5
+results = calculate_powers(n)
 
-st.write(f"the square of {n} is: {square}")
-st.write(f"the cube of {n} is: {cube}")
-st.write(f"the fifth power of {n} is: {fifth_power}" )
+st.write(f"The square of {n} is: {results['square']}")
+st.write(f"The cube of {n} is: {results['cube']}")
+st.write(f"The fifth power of {n} is: {results['fifth_power']}")
